@@ -38,14 +38,176 @@
 
   <style>
     .publication-title {
-      font-size: 2.0rem;
+      font-size: 2.2rem;
       line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
     }
     
     @media screen and (max-width: 768px) {
       .publication-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
+    }
+    
+    .image-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 0.7rem;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    
+    .section-title {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: #363636;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: #485fc7;
+    }
+    
+    .abstract {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    
+    .highlight {
+      color: #485fc7;
+      font-weight: 600;
+    }
+    
+    .image-container {
+      margin-bottom: 3rem;
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .image-container img {
+      display: block;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    
+    .image-container:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-box {
+      background-color: #f9f9f9;
+      padding: 1.8rem;
+      border-radius: 8px;
+      height: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border-left: 4px solid #485fc7;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    
+    .feature-icon {
+      font-size: 2.2rem;
+      color: #485fc7;
+      margin-bottom: 1.2rem;
+    }
+    
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .title, .subtitle {
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    }
+    
+    .content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+    
+    .section {
+      padding: 3rem 1.5rem;
+    }
+    
+    .hero-body {
+      padding: 3rem 1.5rem 2rem;
+    }
+    
+    .citation-box {
+      background-color: #f5f5f5;
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .footer {
+      background-color: #fafafa;
+      padding: 3rem 1.5rem;
+    }
+    
+    .button.is-dark {
+      background-color: #363636;
+      transition: all 0.3s ease;
+    }
+    
+    .button.is-dark:hover {
+      background-color: #485fc7;
+    }
+    
+    .authors-section {
+      margin-bottom: 1.5rem;
+    }
+    
+    .author-block {
+      font-size: 1.1rem;
+    }
+    
+    .publication-logo img {
+      max-height: 100px;
+      margin-bottom: 1rem;
+    }
+    
+    .main-image-section {
+      padding-top: 0;
+    }
+    
+    .key-features {
+      margin-top: 2.5rem;
+    }
+    
+    .content ul li {
+      margin-bottom: 0.7rem;
+    }
+    
+    .top-overview-image {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -57,7 +219,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">Large Language Model Psychometrics: A Comprehensive Survey of Evaluation, Validation, and Enhancement</h1>
-            <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors authors-section">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="#" target="_blank">Haoran Ye</a>,</span>
@@ -71,7 +233,7 @@
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Peking university</span>
+              <span class="author-block">Peking University</span>
             </div>
 
             <div class="column has-text-centered">
@@ -113,33 +275,269 @@
     </div>
   </section>
 
-  <!-- Main image - 这部分您可以自行设置图片 -->
-  <section class="hero">
+  <!-- Main overview image at the top -->
+  <section class="section main-image-section">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <!-- 在这里放置您的图片，您可以替换src属性为您实际的图片路径 -->
-        <img src="static/images/overview_00.png" alt="LLM Psychometrics Framework">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="image-container top-overview-image">
+            <figure class="image">
+              <img src="static/images/overview_00.png" alt="Overview of LLM Psychometrics Framework">
+            </figure>
+            <p class="image-caption">Figure 1: Overview of our survey on LLM Psychometrics, showing the relationships between various components and methodologies.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Project description -->
+  <!-- Abstract Section -->
   <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
+      <div class="columns is-centered">
         <div class="column is-four-fifths">
-          <div class="content has-text-centered">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="abstract content">
             <p>
-              This paper presents a comprehensive survey of evaluation methods for large language models, 
-              exploring the intersections between traditional psychometric approaches and modern LLM evaluation techniques.
-              We review current validation methods, propose enhancements to existing frameworks, and discuss the future 
-              directions of LLM evaluation methodologies.
+              The evolving capabilities of large language models (LLMs) have outpaced traditional evaluation methodologies and introduced novel evaluation challenges,
+              such as assessing human-like psychological constructs, addressing the limitations
+              of static and task-specific benchmarks, and meeting the requirement for human-centered
+              evaluation. These challenges intersect with psychometrics, the science
+              of quantifying intangible aspects of human psychology. This survey introduces
+              and synthesizes the emerging interdisciplinary field of LLM psychometrics, which
+              applies psychometric instruments, theories, and principles to evaluate, understand,
+              and enhance LLMs. We systematically review the role of psychometrics in shaping
+              LLM benchmarking principles, broadening evaluation scopes, refining evaluation
+              methodologies, validating assessment processes, and enhancing LLM capabilities.
+              The integration of diverse efforts and insights in this paper offers a structured
+              framework for researchers from various backgrounds, facilitating a comprehensive
+              understanding of this emerging field. We aim to offer insights into developing
+              future evaluation paradigms for human-level AI and advance human-centered AI
+              psychology for the greater common good.
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Key Features Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Key Contributions</h2>
+      
+      <div class="columns is-multiline key-features">
+        <div class="column is-half">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="title is-5">Psychological Construct Measurement</h3>
+            <p>Systematic approaches for measuring personality traits, values, morality, and cognitive abilities in LLMs.</p>
+          </div>
+        </div>
+        
+        <div class="column is-half">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-flask"></i>
+            </div>
+            <h3 class="title is-5">Evaluation Methodologies</h3>
+            <p>Comprehensive frameworks for test formats, data sources, prompting strategies, and scoring mechanisms.</p>
+          </div>
+        </div>
+        
+        <div class="column is-half">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="title is-5">Psychometric Validation</h3>
+            <p>Principles for ensuring reliability, validity, and fairness in LLM assessments.</p>
+          </div>
+        </div>
+        
+        <div class="column is-half">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="title is-5">LLM Enhancement Techniques</h3>
+            <p>Applications of psychometric insights to improve model capabilities and alignment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Psychological Constructs Section with Image -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Measuring Psychological Constructs</h2>
+      
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <p>
+              LLMs exhibit measurable personality traits, values, and cognitive capabilities that emerge from their training. 
+              Our survey comprehensively maps these constructs, showing how different assessment frameworks can be applied 
+              to evaluate various aspects of LLM psychology, from personality traits like the Big Five to complex cognitive 
+              abilities like Theory of Mind.
+            </p>
+          </div>
+          
+          <div class="image-container">
+            <figure class="image">
+              <img src="static/images/test.png" alt="Examples of psychometric tests for LLMs">
+            </figure>
+            <p class="image-caption">Figure 2: Examples of psychometric tests for LLMs, showing both personality assessments (left) and cognitive evaluations (right).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Section with Image -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Evaluation Methodology</h2>
+      
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="image-container">
+            <figure class="image">
+              <img src="static/images/method_00.png" alt="Psychometric Evaluation Methodology">
+            </figure>
+            <p class="image-caption">Figure 3: Overview of LLM psychometric evaluation methodology, including test formats, data sources, prompting strategies, and scoring mechanisms.</p>
+          </div>
+          
+          <div class="content">
+            <p>
+              Our survey systematically examines the methodological approaches for psychometric evaluation of LLMs. 
+              This includes structured tests, open-ended conversations, and agentic simulations, alongside diverse data 
+              sources ranging from established inventories to synthetic items generated by LLMs themselves. We analyze 
+              various prompting strategies and scoring mechanisms that enhance the reliability and validity of the 
+              assessment process.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Validation Section with Image -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Psychometric Validation</h2>
+      
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="image-container">
+            <figure class="image">
+              <img src="static/images/validation_00.png" alt="Overview of psychometric validation approaches">
+            </figure>
+            <p class="image-caption">Figure 4: Overview of psychometric validation: reliability and consistency, validity, and standards and recommendations.</p>
+          </div>
+          
+          <div class="content">
+            <p>
+              Ensuring the reliability and validity of LLM assessments presents unique challenges. Our survey explores 
+              test-retest reliability, content validity, construct validity, and criterion validity in the context of LLM 
+              evaluation. We present empirical findings showing how prompt sensitivity, social desirability bias, and other 
+              factors influence assessment results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLM Enhancement Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">LLM Enhancement Techniques</h2>
+      
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <p>
+              Psychometric principles extend beyond evaluating LLMs; they serve as powerful tools for model development 
+              and enhancement. Our survey explores how psychometric frameworks can shape and enhance LLM behaviors across 
+              three key domains:
+            </p>
+            
+            <ul>
+              <li><span class="highlight">Trait Manipulation</span>: Techniques for controlling LLM personality expressions through prompting, inference-time interventions, and fine-tuning</li>
+              <li><span class="highlight">Safety and Alignment</span>: Leveraging psychometric measurements to guide alignment with human values and improve safety</li>
+              <li><span class="highlight">Cognitive Enhancement</span>: Methods for developing more human-like reasoning, empathy, and communication capabilities</li>
+            </ul>
+            
+            <p>
+              These applications demonstrate how a deep understanding of LLM psychology can inform the development of 
+              more capable, aligned, and beneficial AI systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Directions Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Future Directions</h2>
+      
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="content">
+            <p>
+              Our survey identifies several emerging trends and future directions for LLM psychometrics research:
+            </p>
+            
+            <ul>
+              <li><span class="highlight">From Human Constructs to LLM Constructs</span>: Developing new psychological theories specifically tailored to LLMs</li>
+              <li><span class="highlight">Perceived vs. Aligned Traits</span>: Distinguishing between traits perceived in text and those aligned with human values</li>
+              <li><span class="highlight">Anthropomorphization Challenges</span>: Addressing methodological issues in treating LLMs as entities with psychological traits</li>
+              <li><span class="highlight">Expanding Dimensions</span>: Extending psychometric evaluation to multilingual, multi-turn, multimodal, and multi-agent contexts</li>
+              <li><span class="highlight">Item Response Theory</span>: Leveraging advanced psychometric models to improve evaluation efficiency and accuracy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citation Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Citation</h2>
+      
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="citation-box">
+            <code>@article{ye2025llmpsychometrics,
+  title={Large Language Model Psychometrics: A Comprehensive Survey of Evaluation, Validation, and Enhancement},
+  author={Ye, Haoran and [Other Authors]},
+  journal={[Journal Name]},
+  year={2025},
+  publisher={[Publisher]}
+}</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Website template based on <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
