@@ -1,5 +1,4 @@
- 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -229,6 +228,76 @@
     .reversed-layout .content {
       margin-top: 2rem;
     }
+    
+    /* Comparison Table Styles */
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    
+    .comparison-table th {
+      background-color: #485fc7;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    
+    .comparison-table tr:nth-child(even) {
+      background-color: #f5f7ff;
+    }
+    
+    .comparison-table tr:nth-child(odd) {
+      background-color: white;
+    }
+    
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #eaeaea;
+      font-size: 0.95rem;
+      vertical-align: top;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .comparison-table td:first-child {
+      font-weight: 600;
+      color: #485fc7;
+      width: 18%;
+    }
+    
+    .comparison-table td:nth-child(2), 
+    .comparison-table td:nth-child(3) {
+      width: 41%;
+    }
+    
+    .table-container {
+      overflow-x: auto;
+      margin-top: 2rem;
+    }
+    
+    .table-caption {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #485fc7;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .comparison-table td, .comparison-table th {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -341,51 +410,70 @@
     </div>
   </section>
 
-  <!-- Key Features Section -->
+  <!-- Comparison Table Section (Replacing Key Features) -->
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Key Contributions</h2>
+      <h2 class="title is-3 has-text-centered">Comparison: Psychometrics vs AI Benchmarks</h2>
       
-      <div class="columns is-multiline key-features">
-        <div class="column is-half">
-          <div class="feature-box">
-            <div class="feature-icon">
-              <i class="fas fa-brain"></i>
-            </div>
-            <h3 class="title is-5">Psychological Construct Measurement</h3>
-            <p>Systematic approaches for measuring personality constructs and cognitive abilities in LLMs.</p>
-          </div>
-        </div>
-        
-        <div class="column is-half">
-          <div class="feature-box">
-            <div class="feature-icon">
-              <i class="fas fa-flask"></i>
-            </div>
-            <h3 class="title is-5">Evaluation Methodologies</h3>
-            <p>Comprehensive frameworks for test formats, data sources, prompting strategies, and scoring mechanisms.</p>
-          </div>
-        </div>
-        
-        <div class="column is-half">
-          <div class="feature-box">
-            <div class="feature-icon">
-              <i class="fas fa-check-circle"></i>
-            </div>
-            <h3 class="title is-5">Psychometric Validation</h3>
-            <p>Principles for ensuring reliability, validity, and fairness in LLM assessments.</p>
-          </div>
-        </div>
-        
-        <div class="column is-half">
-          <div class="feature-box">
-            <div class="feature-icon">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <h3 class="title is-5">LLM Enhancement Techniques</h3>
-            <p>Applications of psychometric insights to improve model capabilities and alignment.</p>
-          </div>
-        </div>
+      <div class="table-caption">Table 1: Systematic comparison between psychometric evaluation and conventional AI benchmarking approaches</div>
+      
+      <div class="table-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Psychometrics</th>
+              <th>AI Benchmark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Core goal</td>
+              <td>To prove that a test measures what it is intended to measure (validity evidence) and to understand the construct being measured.</td>
+              <td>To test and compare the task performance of different LLMs. Focuses on ranking models and selecting the best one suited for a specific task.</td>
+            </tr>
+            <tr>
+              <td>Philosophy of measurement</td>
+              <td>Construct-oriented. Tends towards a causal approach to measurement, where the measured trait is believed to cause the measurement outcomes.</td>
+              <td>Task-oriented. Leans towards representativism, assuming items exhaust or represent all aspects of the underlying ability.</td>
+            </tr>
+            <tr>
+              <td>Target construct</td>
+              <td>Personality and ability.</td>
+              <td>Mostly task-specific abilities.</td>
+            </tr>
+            <tr>
+              <td>Construct definition</td>
+              <td>Emphasizes clear and detailed definitions of the construct being measured. Agreement on the construct definition is a byproduct of test development.</td>
+              <td>Often defines constructs implicitly through ad hoc task selection. Construct definitions can be vague.</td>
+            </tr>
+            <tr>
+              <td>Development process</td>
+              <td>Systematic and rigorous, often following methods like Evidence-Centered Design (ECD). Can be labor-intensive.</td>
+              <td>Compiles a set of relevant questions or tasks, then performs expert annotation or crowdsourcing to label ground truth answers. Less labor-intensive per item.</td>
+            </tr>
+            <tr>
+              <td>Number of items</td>
+              <td>Can vary, but not necessarily large. Focus is on item quality and relevance to the construct.</td>
+              <td>Typically consists of an extensive number of questions to cover various aspects of abilities. Reliability increases with test length.</td>
+            </tr>
+            <tr>
+              <td>Sample size</td>
+              <td>Typically requires a larger sample size of individuals for robust statistical modeling.</td>
+              <td>Can be applied to evaluate the performance of a single LLM on the benchmark.</td>
+            </tr>
+            <tr>
+              <td>Statistical modeling</td>
+              <td>Employs advanced and various statistical models like Item Response Theory and Factor Analysis to analyze data, estimate latent abilities, and assess model fit.</td>
+              <td>Often relies on simple aggregation methods, such as calculating average accuracy across benchmarks.</td>
+            </tr>
+            <tr>
+              <td>Result analysis</td>
+              <td>Ensures the reliability, validity, predictive power, and explanatory power of the test through result analysis and statistical modeling.</td>
+              <td>Reliability is likely to be high due to the large number of items. However, validity, predictive power, or explanatory power beyond the target task is not a primary concern.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
