@@ -298,6 +298,63 @@
         font-size: 0.9rem;
       }
     }
+    
+    /* New enhanced styles for text content sections */
+    .text-content-box {
+      background: linear-gradient(to right, #f8f9ff, #eef1ff);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 3px 10px rgba(72, 95, 199, 0.1);
+      border-left: 5px solid #485fc7;
+      position: relative;
+    }
+    
+    .text-content-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23485fc7" fill-opacity="0.03" d="M0 0h100v100H0z"/></svg>');
+      opacity: 0.5;
+      border-radius: 12px;
+      z-index: 0;
+    }
+    
+    .text-content-box p {
+      position: relative;
+      z-index: 1;
+      line-height: 1.7;
+    }
+    
+    /* Avatar replacement */
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #485fc7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 10px;
+    }
+    
+    /* Gradient text for section titles */
+    .gradient-title {
+      background: linear-gradient(90deg, #485fc7, #8c9eff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -478,7 +535,7 @@
     </div>
   </section>
 
-  <!-- Psychological Constructs Section with Image - Moved text below image -->
+  <!-- Psychological Constructs Section with Image - Moved text below image with enhanced styling -->
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Measuring Psychological Constructs</h2>
@@ -492,12 +549,10 @@
             <p class="image-caption">Figure 2: Examples of psychometric tests for LLMs, showing both personality assessments (left) and cognitive evaluations (right).</p>
           </div>
           
-          <div class="content">
+          <div class="text-content-box">
+            <h4 class="gradient-title">Psychological Domains in LLM Research</h4>
             <p>
-              LLMs exhibit measurable personality traits and cognitive capabilities that emerge from their training. 
-              Our survey comprehensively maps these constructs, showing how different assessment frameworks can be applied 
-              to evaluate various aspects of LLM psychology, from personality traits like the Big Five to complex cognitive 
-              abilities like Theory of Mind.
+              We group the traits probed in LLMs into two super‑domains. Personality Constructs capture relatively enduring dispositions and preferences. Under this heading we place (1) Personality traits measured by Big Five, HEXACO, MBTI or Dark‑Triad batteries; (2) Values inventories such as Schwartz, WVS, VSM and GLOBE; (3) Morality scales—MFT, DIT, ETHICS—gauging moral foundations; and (4) Attitudes & Opinions from political panels like ANES, ATP, GLES and PCT. By contrast, Cognitive Constructs probe fluid abilities. These include (1) Heuristics & Biases tasks such as the Cognitive Reflection Test; (2) Social interaction abilities—Theory of Mind, Emotional and Social Intelligence; (3) Psychology of Language modules covering comprehension, generation and acquisition; and (4) Learning & Cognitive Capabilities assessed through open‑ended similarity or reasoning items. Together these two domains provide a comprehensive blueprint for modelling an LLM's "personality" and "cognition" with standard psychometric tools.
             </p>
           </div>
         </div>
@@ -505,7 +560,7 @@
     </div>
   </section>
 
-  <!-- Methodology Section with Image -->
+  <!-- Methodology Section with Image and enhanced text styling -->
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Evaluation Methodology</h2>
@@ -519,13 +574,10 @@
             <p class="image-caption">Figure 3: Overview of LLM psychometric evaluation methodology, including test formats, data sources, prompting strategies, and scoring mechanisms.</p>
           </div>
           
-          <div class="content">
+          <div class="text-content-box">
+            <h4 class="gradient-title">Assessment Techniques for LLMs</h4>
             <p>
-              Our survey systematically examines the methodological approaches for psychometric evaluation of LLMs. 
-              This includes structured tests, open-ended conversations, and agentic simulations, alongside diverse data 
-              sources ranging from established inventories to synthetic items generated by LLMs themselves. We analyze 
-              various prompting strategies and scoring mechanisms that enhance the reliability and validity of the 
-              assessment process.
+              Our methodological framework mirrors a classic assessment pipeline but is tailored to LLM tooling. Test format can range from tightly controlled structured items (single choice or Likert) to open‑ended conversations and full agentic simulations in which the model plays a role over many turns. Data sources may come from established inventories, researcher‑curated adaptations, or synthetic prompts automatically generated to extend test coverage. Prompting strategies include perturbing the original question, injecting step‑by‑step or role‑playing instructions, and enforcing chain‑of‑thought disclosure, all designed to surface latent capacities while controlling for prompt sensitivity. Finally, output & scoring modules translate the model's raw text into numerical metrics: logits for probability‑based scoring, direct mapping to scale points, or rubric‑based evaluation of free text, optionally adjudicated by additional models or humans.
             </p>
           </div>
         </div>
@@ -533,7 +585,7 @@
     </div>
   </section>
 
-  <!-- Validation Section with Image -->
+  <!-- Validation Section with Image and enhanced text styling -->
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Psychometric Validation</h2>
@@ -547,12 +599,10 @@
             <p class="image-caption">Figure 4: Overview of psychometric validation: reliability and consistency, validity, and standards and recommendations.</p>
           </div>
           
-          <div class="content">
+          <div class="text-content-box">
+            <h4 class="gradient-title">Validation Framework for LLM Assessments</h4>
             <p>
-              Ensuring the reliability and validity of LLM assessments presents unique challenges. Our survey explores 
-              test-retest reliability, content validity, construct validity, and criterion validity in the context of LLM 
-              evaluation. We present empirical findings showing how prompt sensitivity, social desirability bias, and other 
-              factors influence assessment results.
+              Applying psychometrics to LLMs demands the same evidential standards used for human tests. Reliability is assessed via test–retest stability, parallel‑form equivalence, and inter‑rater agreement when subjective coding is involved. Validity evidence is gathered on multiple fronts: content (guarding against training‑data contamination and item representativeness), construct (ensuring responses reflect the intended latent trait rather than response sets or social desirability bias), and criterion or ecological correspondence with external benchmarks. We also emphasize emerging standards—non‑disclosure of test materials, fairness across languages and cultures, and suitability of item difficulty to model capability—to prevent inflation of scores and to promote transparent comparisons across models and human baselines.
             </p>
           </div>
         </div>
@@ -650,6 +700,25 @@
       </div>
     </div>
   </footer>
+
+  <!-- Custom Script to replace the default avatar with our custom one -->
+  <script>
+    // This script would run on page load to replace any avatar images
+    document.addEventListener('DOMContentLoaded', function() {
+      // Replace avatar images if they exist
+      const avatarImages = document.querySelectorAll('.user-avatar img');
+      avatarImages.forEach(img => {
+        // Create a custom avatar element to replace the image
+        const customAvatar = document.createElement('div');
+        customAvatar.className = 'author-avatar';
+        customAvatar.innerHTML = 'LLM';
+        
+        // Replace the img with our custom avatar
+        const parentElement = img.parentNode;
+        parentElement.replaceChild(customAvatar, img);
+      });
+    });
+  </script>
 
 </body>
 </html>
