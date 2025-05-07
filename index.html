@@ -448,7 +448,7 @@
             <figure class="image">
               <img src="static/images/overview_00.png" alt="Overview of LLM Psychometrics Framework">
             </figure>
-            <p class="image-caption">Figure 1: Overview of our survey on LLM Psychometrics, showing the relationships between various components and methodologies.</p>
+            <p class="image-caption">Figure 1: Overview of our survey on LLM Psychometrics.</p>
           </div>
         </div>
       </div>
@@ -491,7 +491,7 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Comparison: Psychometrics vs AI Benchmarks</h2>
       
-      <div class="table-caption">Table 1: Systematic comparison between psychometric evaluation and conventional AI benchmarking approaches</div>
+      <div class="table-caption">Table 1: Systematic comparison between psychometric evaluation and conventional AI benchmarking approaches.</div>
       
       <div class="table-container">
         <table class="comparison-table">
@@ -565,13 +565,13 @@
             <figure class="image">
               <img src="static/images/test.png" alt="Examples of psychometric tests for LLMs">
             </figure>
-            <p class="image-caption">Figure 2: Examples of psychometric tests for LLMs, showing both personality assessments (left) and cognitive evaluations (right).</p>
+            <p class="image-caption">Figure 2: Examples of psychometric tests for LLMs, showing both personality (left) and cognitive (right) evaluations.</p>
           </div>
           
           <div class="text-content-box">
             <h4 class="gradient-title">Psychological Constructs in LLM Research</h4>
             <p>
-              LLM psychometrics evaluates LLMs in their personality and cognitive constructs. Personality constructs include (1) personality traits measured based on theories such as Big Five, HEXACO, MBTI, or Dark Triad; (2) values based on theories such as Schwartz, WVS, VSM, and GLOBE; (3) morality based on MFT, DIT, and ETHICS; and (4) attitudes and opinions from political panels like ANES, ATP, GLES, and PCT. In contrast, cognitive constructs include (1) heuristics and biases measured by tasks such as the Cognitive Reflection Test; (2) social interaction abilities—Theory of Mind, Emotional and Social Intelligence; (3) psychology of language modules covering comprehension, generation, and acquisition; and (4) learning and cognitive capabilities.
+              LLM psychometrics evaluates LLMs in their personality and cognitive constructs. Personality constructs include (1) personality traits based on theories such as Big Five, HEXACO, MBTI, or Dark Triad; (2) values based on theories such as Schwartz, WVS, VSM, and GLOBE; (3) morality based on MFT, DIT, and ETHICS; and (4) attitudes and opinions from political panels like ANES, ATP, GLES, and PCT. In contrast, cognitive constructs include (1) heuristics and biases measured by tasks such as the Cognitive Reflection Test; (2) social interaction abilities—Theory of Mind, Emotional and Social Intelligence; (3) psychology of language covering comprehension, generation, and acquisition; and (4) learning and cognitive capabilities.
             </p>
           </div>
         </div>
@@ -590,13 +590,13 @@
             <figure class="image">
               <img src="static/images/method_00.png" alt="Psychometric Evaluation Methodology">
             </figure>
-            <p class="image-caption">Figure 3: Overview of LLM psychometric evaluation methodology, including test formats, data sources, prompting strategies, and scoring mechanisms.</p>
+            <p class="image-caption">Figure 3: Overview of LLM psychometric evaluation methodology, including test formats, data sources, prompting strategies, model outputs, and scoring mechanisms.</p>
           </div>
           
           <div class="text-content-box">
-            <h4 class="gradient-title">Assessment Techniques for LLMs</h4>
+            <h4 class="gradient-title">Evaluation Methodologies for LLM Psychometrics</h4>
             <p>
-              Our framework mirrors a classic assessment pipeline but is tailored to LLM tooling. Test format can range from tightly controlled structured items (single choice or Likert) to open‑ended conversations and full agentic simulations in which the model plays a role over many turns. Data sources may come from established inventories, researcher‑curated adaptations, or synthetic prompts automatically generated to extend test coverage. Prompting strategies include perturbing the original question, injecting step‑by‑step or role‑playing instructions, and enforcing chain‑of‑thought disclosure, all designed to surface latent capacities while controlling for prompt sensitivity. Finally, output & scoring modules translate the model's raw text into numerical metrics: logits for probability‑based scoring, direct mapping to scale points, or rubric‑based evaluation of free text, optionally adjudicated by additional models or humans.
+              LLM psychometrics mirrors a classic testing pipeline in some aspects but is more tailored to LLMs. Test formats can range from tightly controlled structured items (forced-choice or Likert) to open-ended conversations and full agentic simulations. Data sources may come from established inventories, custom-curated adaptations, or synthetic prompts automatically generated to extend test coverage. Prompting strategies include perturbing the original question and injecting performance-enhancing or role-playing instructions. Finally, output and scoring modules translate the model's raw text into numerical metrics: logit-based analysis and direct scoring for closed-ended outputs, or rule-based, model-based, or human evaluation for open-ended LLM outputs.
             </p>
           </div>
         </div>
@@ -621,7 +621,7 @@
           <div class="text-content-box">
             <h4 class="gradient-title">Validation Framework for LLM Psychometrics</h4>
             <p>
-              Applying psychometrics to LLMs requires validation. Reliability is assessed through test-retest reliability, parallel forms reliability, and inter-rater reliability when subjective coding is involved. Validity evidence is gathered on multiple fronts: content (guarding against training-data contamination and item representativeness), construct (ensuring responses reflect the intended latent trait rather than response sets or social desirability bias), and criterion or ecological correspondence with external benchmarks. We also gather emerging standards, such as non-disclosure of test materials, fairness across languages and cultures, and the suitability of tests for model capabilities.
+              Applying psychometrics to LLMs requires validation. Reliability is assessed through test-retest reliability, parallel forms reliability, and inter-rater reliability when subjective coding is involved. Validity evidence is gathered on multiple fronts: content (guarding against training data contamination or item under-representativeness), construct (ensuring responses reflect the intended latent trait rather than confounding factors such as response sets or social desirability bias), and criterion or ecological correspondence with external benchmarks. We also gather emerging standards, such as non-disclosure of test materials, fairness across languages and cultures, and the suitability of tests for model capabilities.
             </p>
           </div>
         </div>
@@ -639,15 +639,13 @@
           <div class="column">
             <div class="content">
               <p>
-                Psychometric principles extend beyond evaluating LLMs; they serve as powerful tools for model development 
-                and enhancement. Our survey explores how psychometric frameworks can shape and enhance LLM behaviors across 
-                three key domains:
+                Psychometrics also serves as powerful tools for model enhancement across three key domains:
               </p>
               
               <ul>
-                <li><span class="highlight">Trait Manipulation</span>: Techniques for controlling LLM traits through prompting, inference-time interventions, and fine-tuning</li>
-                <li><span class="highlight">Safety and Alignment</span>: Leveraging psychometric measurements to guide alignment with human values and improve safety</li>
-                <li><span class="highlight">Cognitive Enhancement</span>: Methods for developing more human-like reasoning, empathy, and communication capabilities</li>
+                <li><span class="highlight">Trait Manipulation</span>: Controlling LLM traits through prompting, inference-time interventions, and fine-tuning.</li>
+                <li><span class="highlight">Safety and Alignment</span>: Leveraging psychometrics to guide LLM value alignment and improve safety.</li>
+                <li><span class="highlight">Cognitive Enhancement</span>: Developing stronger or more human-like reasoning, empathy, and communication capabilities.</li>
               </ul>
               
             </div>
@@ -667,17 +665,17 @@
           <div class="column">
             <div class="content">
               <p>
-                Our survey identifies several emerging trends and future directions for LLM psychometrics research:
+                Our survey identifies several emerging trends, challenges, and future directions for LLM psychometrics research:
               </p>
               
               <ul>
                 <li><span class="highlight">Psychometric Validation</span>: Establish rigorous reliability and validity checks.</li>
-                <li><span class="highlight">From Human Constructs to LLM Constructs</span>: Reframe classical psychological constructs so they align with the representational space and behavior patterns of language models.</li>
+                <li><span class="highlight">From Human Constructs to LLM Constructs</span>: Tailor psychological constructs for LLMs.</li>
                 <li><span class="highlight">Perceived vs. Aligned Traits</span>: Distinguish between traits that humans perceive from LLM outputs and those aligned with human self-views.</li>
-                <li><span class="highlight">Anthropomorphization Challenges</span>: Properly anthropomorphizing LLMs in psychometric tests remains a controversial topic.</li>
+                <li><span class="highlight">Anthropomorphization Challenges</span>: Properly anthropomorphizing LLMs in psychometric tests remains a subject of academic debate.</li>
                 <li><span class="highlight">Expanding Dimensions in Model Deployment</span>: Extend evaluations to multilingual, multi-turn, multimodal, agent, and multi-agent contexts where new validity issues emerge.</li>
-                <li><span class="highlight">Item Response Theory</span>: Adopt sophisticated IRT models and adaptive testing to improve LLM evaluation.</li>
-                <li><span class="highlight">From Evaluation to Enhancement</span>: Use psychometric insights to enhance and align LLMs.</li>
+                <li><span class="highlight">Item Response Theory</span>: Adopt IRT models to improve LLM evaluation.</li>
+                <li><span class="highlight">From Evaluation to Enhancement</span>: Leverage psychometrics to enhance and align LLMs.</li>
               </ul>
             </div>
           </div>
