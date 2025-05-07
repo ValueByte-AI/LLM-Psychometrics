@@ -693,7 +693,10 @@
       
       <div class="columns is-centered">
         <div class="column">
-          <div class="citation-box">
+          <div class="citation-box" style="position: relative;">
+            <button onclick="copyCitation()" style="position: absolute; top: 10px; right: 10px; background: transparent; border: none; cursor: pointer;">
+              <i class="fas fa-copy"></i>
+            </button>
             <pre>
 @article{ye2025llmpsychometrics,
   title={Large Language Model Psychometrics: A Comprehensive Survey of Evaluation, Validation, and Enhancement},
@@ -701,7 +704,6 @@
   year={2025},
 }
             </pre>
-            <button onclick="copyCitation()">Copy Citation</button>
             <script>
               function copyCitation() {
                 const citationText = `@article{ye2025llmpsychometrics,
